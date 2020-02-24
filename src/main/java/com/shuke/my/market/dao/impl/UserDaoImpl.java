@@ -24,4 +24,30 @@ public class UserDaoImpl implements UserDao {
         }
         return user;
     }
+
+    public Boolean remME(String remMe, String email, String loginPwd) {
+        Boolean remFlag = false;
+        if (remMe.equals("on")) {
+            if (email.equals("admin@qq.com")) {
+                if (loginPwd.equals("admin")) {
+                    logger.info("可以记住我");
+                    remFlag = true;
+                }
+            }
+        }
+        return remFlag;
+    }
+
+    public Boolean autoSign(String autoSign, String email, String loginPwd) {
+        Boolean autoFlag = false;
+        if (autoSign.equals("on")) {
+            if (email.equals("admin@qq.com")) {
+                if (loginPwd.equals("admin")) {
+                    logger.info("可以自动登录");
+                    autoFlag = true;
+                }
+            }
+        }
+        return autoFlag;
+    }
 }
