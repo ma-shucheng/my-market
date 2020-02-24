@@ -2,12 +2,11 @@ package com.shuke.my.market.service.impl;
 
 import com.shuke.my.market.commons.context.SpringContext;
 import com.shuke.my.market.dao.UserDao;
-import com.shuke.my.market.dao.impl.UserDaoImpl;
 import com.shuke.my.market.entity.User;
 import com.shuke.my.market.service.UserService;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Service;
 
+@Service(value = "userService")
 public class UserServiceImpl implements UserService {
 //    UserDao userDao = new UserDaoImpl();
 

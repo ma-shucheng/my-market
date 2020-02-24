@@ -4,7 +4,9 @@ import com.shuke.my.market.dao.UserDao;
 import com.shuke.my.market.entity.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 
+@Repository(value = "userDao")
 public class UserDaoImpl implements UserDao {
 
     private Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
