@@ -4,5 +4,7 @@
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="springContext" class="com.shuke.my.market.commons.context.SpringContext"/>
+    <bean id="userService" class="com.shuke.my.market.service.impl.UserServiceImpl"/>
     <bean id="userDao" class="com.shuke.my.market.dao.impl.UserDaoImpl"/>
 </beans>
