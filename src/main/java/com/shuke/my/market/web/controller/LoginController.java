@@ -34,21 +34,6 @@ public class LoginController extends HttpServlet {
 
         User user = userService.login(email, loginPwd);
 
-        //创建Cookie对象
-        Cookie nameCookie = new Cookie("email", email);
-        Cookie pwdCookie = new Cookie("loginPwd", loginPwd);
-        //如果可以记住我
-        if (userService.remME(remMe, email, loginPwd)) {
-            //设置保存时长，有效期是10天
-            nameCookie.setMaxAge(60 * 60 * 24 * 10);
-            pwdCookie.setMaxAge(60 * 60 * 24 * 10);
-            resp.addCookie(nameCookie);
-            resp.addCookie(pwdCookie);
-            logger.info("添加Cookie");
-        }else {
-            nameCookie.setMaxAge(0);
-            pwdCookie.setMaxAge(0);
-        }
 
         //登录失败的处理
         if (user == null) {
