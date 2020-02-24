@@ -26,6 +26,7 @@
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
+
 </head>
 <!--Head End-->
 
@@ -79,10 +80,10 @@
                 <div class="col-xs-8">
                     <div class="checkbox icheck">
                         <label>
-                            <input type="checkbox"> 记住我
+                            <input name="remMe" type="checkbox"> 记住我
                         </label>
                         <label>
-                            <input type="checkbox"> 自动登录
+                            <input name="autoSign" type="checkbox"> 自动登录
                         </label>
                     </div>
                 </div>
