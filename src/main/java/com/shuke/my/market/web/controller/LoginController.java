@@ -1,5 +1,6 @@
 package com.shuke.my.market.web.controller;
 
+import com.shuke.my.market.commons.context.SpringContext;
 import com.shuke.my.market.dao.impl.UserDaoImpl;
 import com.shuke.my.market.entity.User;
 import com.shuke.my.market.service.UserService;
@@ -16,7 +17,7 @@ import java.io.IOException;
 
 public class LoginController extends HttpServlet {
     private Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
-    private UserService userService = new UserServiceImpl();
+    private UserService userService = SpringContext.getBean("userService");
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
