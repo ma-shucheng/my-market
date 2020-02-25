@@ -4,6 +4,7 @@ public class User {
     private String loginId;
     private String loginPwd;
     private String email;
+    private String remMe;
 
     @Override
     public String toString() {
@@ -11,7 +12,16 @@ public class User {
                 "loginId='" + loginId + '\'' +
                 ", loginPwd='" + loginPwd + '\'' +
                 ", email='" + email + '\'' +
+                ", remMe='" + remMe + '\'' +
                 '}';
+    }
+
+    public void setRemMe(String remMe) {
+        this.remMe = remMe;
+    }
+
+    public String getRemMe() {
+        return remMe;
     }
 
     public void setLoginId(String loginId) {
