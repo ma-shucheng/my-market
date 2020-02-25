@@ -48,6 +48,19 @@ public class LoginController extends HttpServlet {
 
         User user = userService.login(email, loginPwd);
 
+        //登录失败的处理
+        if (user == null) {
+            req.setAttribute("message","用户名或密码错误");
+            logger.info("发送错误消息");
+            req.getRequestDispatcher("/login.jsp").forward(req,resp);
+        }
+
+        //登录成功的处理
+        else {
+            logger.info("页面成功跳转");
+            req.setAttribute("message",null);
+            req.getRequestDispatcher("/success.jsp").forward(req,resp);
+        }
 
         //如果点击记住我,将用户名和密码信息存入Cookie
         if (remMe) {
@@ -58,18 +71,5 @@ public class LoginController extends HttpServlet {
             CookieUtils.setCookie(req,resp,COM_SHUKE_LOGINFO,null,0);
         }
 
-        //登录失败的处理
-        if (user == null) {
-            req.setAttribute("message","用户名或密码错误");
-            logger.info("发送错误消息");
-            req.getRequestDispatcher("/index.jsp").forward(req,resp);
-        }
-
-        //登录成功的处理
-        else {
-            logger.info("页面成功跳转");
-            req.setAttribute("message",null);
-            req.getRequestDispatcher("/success.jsp").forward(req,resp);
-        }
     }
 }
