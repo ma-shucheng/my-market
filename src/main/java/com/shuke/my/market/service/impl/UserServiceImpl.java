@@ -6,7 +6,7 @@ import com.shuke.my.market.entity.User;
 import com.shuke.my.market.service.UserService;
 import org.springframework.stereotype.Service;
 
-@Service(value = "userService")
+@Service
 public class UserServiceImpl implements UserService {
 //    UserDao userDao = new UserDaoImpl();
 
